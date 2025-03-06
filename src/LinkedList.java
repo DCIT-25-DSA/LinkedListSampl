@@ -3,7 +3,7 @@
  * Each node contains:
  * - An integer value (`value`) to store data.
  * - A reference (`next`) to the next node in the LinkedList.
- * If `next` is null, it signifies the end of the list.
+             * If `next` is null, it signifies the end of the list.
  */
 class ListNode {
     int value; // Data stored in the node
@@ -42,17 +42,15 @@ public class LinkedList {
         ListNode newNode = new ListNode(value);
 
         // Handle the case where the linked list is currently empty
-        if (head == null) {
-            head = newNode; // The new node becomes the head
+        if (head == null) { //  T
+            head = newNode; // The new node becomes the head // 1 -
             return;
         }
-
         // Traverse to the last node in the list
         ListNode currentNode = head;
-        while (currentNode.next != null) { // Continue until we find the last node
+        while (currentNode.next != null) { // Continue until we find the last node 1 -> 2 -> 3 -> null
             currentNode = currentNode.next;
         }
-
         // Link the last node to the new node
         currentNode.next = newNode;
     }
@@ -72,10 +70,11 @@ public class LinkedList {
         ListNode currentNode = head;
 
         // Traverse the list and print each node's value
-        while (currentNode != null) {
+        while (currentNode != null) { // 3 - > 2 -> 1 -> null
             System.out.print(currentNode.value + " -> ");
             currentNode = currentNode.next;
         }
+
 
         // Indicate the end of the list
         System.out.println("null");
